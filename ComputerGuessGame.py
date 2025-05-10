@@ -26,7 +26,7 @@ class ReverseGuess(Frame):
         self.tooLargeBtn = Button(self, text="Too Large", command=self.too_large)
         self.tooLargeBtn.grid(row=1, column=2)
 
-        self.newGameBtn = Button(self, text="New Game", command=self.new_game, state=DISABLED)
+        self.newGameBtn = Button(self, text="New Game", command=self.new_game)
         self.newGameBtn.grid(row=2, column=0, columnspan=3)
 
     def update_guess(self):
@@ -44,7 +44,6 @@ class ReverseGuess(Frame):
 
     def correct(self):
         self.guessVar.set(f"I guessed it! The number is {self.guess}. Attempts: {self.attempts}")
-        self.disable_buttons()
 
     def new_game(self):
         self.low = 1
